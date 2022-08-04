@@ -1,0 +1,18 @@
+@font-face {
+	font-family: antenna-light;
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url("~/assets/fonts/Antenna-Light.ttf") format("truetype"),
+		url("~/assets/fonts/Antenna-Light.woff2") format("woff2"),
+		url("~/assets/fonts/Antenna-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: antenna-black;
+	font-style: normal;
+	font-weight: 800;
+	font-display: swap;
+	src: url("~/assets/fonts/FordAntennaCond-Black.woff") format("woff"),
+		url("~/assets/fonts/FordAntennaCond-Black.woff2") format("woff2");
+}

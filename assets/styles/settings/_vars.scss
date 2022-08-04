@@ -1,0 +1,31 @@
+// transitions
+$transition-cubic: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$transition: 0.5s $transition-cubic;
+$transition-slow: 0.7s $transition-cubic;
+$transition-fast: 0.3s $transition-cubic;
+$transition-extra-fast: 0.2s $transition-cubic;
+
+// ------- Media queries -------//
+$viewport-extra-small: 350px; // 350px
+$viewport-small: 576px; // 576px
+$viewport-medium: 992px; // 992px
+$viewport-large: 1025px; // 1025px
+$viewport-extra-large: 1440px; // 1200px
+$viewport-max: 1920px; // 1920px
+
+// Layout spacing
+// xl: 140px
+// l:  120px
+// m:  80px
+// sm:  60px
+// s:  40px
+// xs:  20px
+// spacing
+$spacing-vertical-xl: 9.722vw;
+$spacing-vertical-l: 8.333vw;
+$spacing-vertical-m: 5.556vw;
+$spacing-vertical-sm: 4.286vw;
+$spacing-vertical-s: 4.167vw;
+$spacing-vertical-xs: 2.778vw;
+$spacing-vertical-s: 1.389vw;
+$base-spacing: 0.4rem;

@@ -1,0 +1,104 @@
+@mixin position-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin position-center-y {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin position-center-x {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+// -------- Box Model Resets -------//
+@mixin margin-reset {
+	margin: 0;
+}
+
+@mixin padding-reset {
+	padding: 0;
+}
+
+// -------- Media queries -------//
+// extra small phones
+@mixin viewport-extra-small {
+	// max-width: 350px
+	@media only screen and (max-width: $viewport-extra-small) {
+		@content;
+	}
+}
+
+// phones
+@mixin viewport-small {
+	// max-width: 576
+	@media only screen and (max-width: $viewport-small) {
+		@content;
+	}
+}
+
+// bootstraps breaking point for tablet
+@mixin viewport-tablet {
+	@media only screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+// tablet vertical down to phone
+@mixin viewport-medium {
+	// max-width: 992
+	@media only screen and (max-width: $viewport-medium) {
+		@content;
+	}
+}
+
+// tablet horizontal and down to phone
+@mixin viewport-large {
+	// max-width: 1025
+	@media only screen and (max-width: $viewport-large) {
+		@content;
+	}
+}
+
+// desktop
+@mixin viewport-extra-large {
+	// max-width: 1440
+	@media only screen and (max-width: $viewport-extra-large) {
+		@content;
+	}
+}
+
+// xl screens
+@mixin viewport-max {
+	// min-width: 1920px
+	@media only screen and (min-width: $viewport-max) {
+		@content;
+	}
+}
+
+// custom viewport - max
+@mixin viewport-custom-max($viewport-size) {
+	@media only screen and (max-width: $viewport-size) {
+		@content;
+	}
+}
+
+// custom viewport - min
+@mixin viewport-custom-min($viewport-size) {
+	@media only screen and (min-width: $viewport-size) {
+		@content;
+	}
+}
+
+// only mouse interactions
+@mixin viewport-mouse {
+	@media (hover: hover) and (pointer: fine) {
+		@content;
+	}
+}

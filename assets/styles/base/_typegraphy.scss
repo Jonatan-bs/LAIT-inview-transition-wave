@@ -1,0 +1,85 @@
+@mixin basic-font-style {
+	// font-size: clamp();
+	// line-height: clamp();
+}
+
+@layer base {
+	body {
+		// @apply font-display;
+	}
+}
+@layer components {
+	h1,
+	.headline-1,
+	h2,
+	.headline-2,
+	h3,
+	.headline-3,
+	h4,
+	.headline-4,
+	h5,
+	.headline-5 {
+		// @apply font-bold font-display;
+	}
+
+	h1,
+	.headline-1 {
+		// @apply text-clamp text-sm-2xl text-lg-3xl;
+	}
+
+	h2,
+	.headline-2 {
+		// font-size: clamp();
+		// line-height: clamp();
+	}
+
+	h3,
+	.headline-3 {
+		// font-size: clamp();
+		// line-height: clamp();
+	}
+
+	h4,
+	.headline-4 {
+		// font-size: clamp();
+		// line-height: clamp();
+	}
+
+	h5,
+	.headline-5 {
+		// font-size: clamp();
+		// line-height: clamp();
+	}
+
+	h6,
+	.headline-6 {
+		// font-size: clamp();
+		// line-height: clamp();
+	}
+
+	p,
+	.text-default {
+		// font-size: clamp();
+		// line-height: clamp();
+	}
+
+	a {
+	}
+
+	ul li,
+	ol li {
+	}
+
+	ul li p,
+	ol li p {
+	}
+
+	b,
+	strong,
+	.text-bold {
+	}
+
+	i,
+	.text-italic {
+	}
+}

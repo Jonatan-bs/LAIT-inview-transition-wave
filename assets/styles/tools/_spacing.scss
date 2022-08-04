@@ -1,0 +1,128 @@
+// Layout spacing
+// xl: 140px
+// l:  120px
+// m:  80px
+// sm:  60px
+// s:  40px
+// xs:  20px
+
+.margin-bottom-xl {
+	margin-bottom: clamp(10rem, #{$spacing-vertical-xl}, 14rem);
+}
+
+.padding-bottom-xl {
+	padding-bottom: clamp(10rem, #{$spacing-vertical-xl}, 14rem);
+}
+
+.margin-bottom-l {
+	margin-bottom: clamp(8rem, #{$spacing-vertical-l}, 12rem);
+}
+
+.padding-bottom-l {
+	padding-bottom: clamp(8rem, #{$spacing-vertical-l}, 12rem);
+}
+
+.margin-bottom-m {
+	margin-bottom: clamp(2.5rem, #{$spacing-vertical-m}, 8rem);
+}
+
+.padding-bottom-m {
+	padding-bottom: clamp(2.5rem, #{$spacing-vertical-m}, 8rem);
+}
+
+.margin-bottom-sm {
+	margin-bottom: clamp(2rem, #{$spacing-vertical-sm}, 6rem);
+}
+
+.padding-bottom-sm {
+	padding-bottom: clamp(2rem, #{$spacing-vertical-sm}, 6rem);
+}
+
+.margin-bottom-s {
+	margin-bottom: clamp(1.2rem, #{$spacing-vertical-s}, 4rem);
+}
+
+.padding-bottom-s {
+	padding-bottom: clamp(1.2rem, #{$spacing-vertical-s}, 4rem);
+}
+
+.margin-bottom-xs {
+	margin-bottom: clamp(1rem, #{$spacing-vertical-xs}, 2rem);
+}
+
+.padding-bottom-xs {
+	padding-bottom: clamp(1rem, #{$spacing-vertical-xs}, 2rem);
+}
+
+// Helper spacing
+/// @param {Number} $increment
+/// @return {Number}
+@function spacing($increment) {
+	@return $base-spacing * $increment;
+}
+
+// Padding
+@for $i from 0 through 6 {
+	.p-#{$i} {
+		padding: spacing($i);
+	}
+
+	.p-ends-#{$i} {
+		padding-top: spacing($i);
+		padding-bottom: spacing($i);
+	}
+
+	.p-sides-#{$i} {
+		padding-right: spacing($i);
+		padding-left: spacing($i);
+	}
+
+	.pt-#{$i} {
+		padding-top: spacing($i);
+	}
+
+	.pr-#{$i} {
+		padding-right: spacing($i);
+	}
+
+	.pb-#{$i} {
+		padding-bottom: spacing($i);
+	}
+
+	.pl-#{$i} {
+		padding-left: spacing($i);
+	}
+}
+
+// Margin
+@for $i from 0 through 10 {
+	.m-#{$i} {
+		margin: spacing($i);
+	}
+
+	.m-ends-#{$i} {
+		margin-top: spacing($i);
+		margin-bottom: spacing($i);
+	}
+
+	.m-sides-#{$i} {
+		margin-right: spacing($i);
+		margin-left: spacing($i);
+	}
+
+	.mt-#{$i} {
+		margin-top: spacing($i);
+	}
+
+	.mr-#{$i} {
+		margin-right: spacing($i);
+	}
+
+	.mb-#{$i} {
+		margin-bottom: spacing($i);
+	}
+
+	.ml-#{$i} {
+		margin-left: spacing($i);
+	}
+}

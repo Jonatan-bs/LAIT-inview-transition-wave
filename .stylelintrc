@@ -1,0 +1,4 @@
+{
+	"extends": "@lait/stylelint-config",
+	"rules": {}
+}
