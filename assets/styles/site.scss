@@ -1,13 +1,16 @@
 // settings
-@import 'settings/fonts';
-@import 'settings/vars';
-@import 'settings/colors';
+@import "settings/fonts";
+@import "settings/vars";
+@import "settings/colors";
+
+// animations
+@import "animations/splittext";
 
 // tools
-@import 'tools/mixins';
-@import 'tools/helping-classes';
-@import 'tools/spacing';
+@import "tools/mixins";
+@import "tools/helping-classes";
+@import "tools/spacing";
 
 // base
-@import 'base/global';
-@import 'base/typegraphy';
+@import "base/global";
+@import "base/typegraphy";

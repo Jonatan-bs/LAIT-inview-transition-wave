@@ -1,0 +1,10 @@
+[data-split-text] {
+	opacity: 0;
+
+	&.is-activated {
+		opacity: 1;
+	}
+	> * {
+		display: inline-flex !important;
+	}
+}
