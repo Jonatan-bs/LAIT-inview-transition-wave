@@ -86,11 +86,6 @@ export default {
 		"nuxt-font-loader",
 		"nuxt-gsap-module",
 	],
-	gsap: {
-		extraPlugins: {
-			scrollTrigger: true,
-		},
-	},
 	modules: [
 		"@nuxtjs/svg",
 		"@nuxtjs/robots",
