@@ -20,30 +20,6 @@ export default class inviewMixin extends Vue {
 		});
 	}
 
-	// public parralaxAnimations() {
-	// 	const gsap = this.$gsap;
-	// 	gsap.to("[scroll-trigger-hero-image]", {
-	// 		yPercent: -20,
-	// 		ease: "none",
-	// 		scrollTrigger: {
-	// 			trigger: "[slow-scroll-trigger]",
-	// 			start: "top", // the default values
-	// 			end: "bottom",
-	// 			scrub: true,
-	// 		},
-	// 	});
-	// 	gsap.to("[scroll-trigger-waves]", {
-	// 		yPercent: 300,
-	// 		ease: "none",
-	// 		scrollTrigger: {
-	// 			trigger: "[slow-scroll-trigger]",
-	// 			start: "top", // the default values
-	// 			end: "bottom",
-	// 			scrub: true,
-	// 		},
-	// 	});
-	// }
-
 	public ioGlobal() {
 		const gsap = this.$gsap;
 
@@ -58,6 +34,7 @@ export default class inviewMixin extends Vue {
 		) => {
 			entries.forEach((entry: IntersectionObserverEntry) => {
 				if (entry.isIntersecting) {
+					entry.target.classList.add("split-text--is-activated");
 					// eslint-disable-next-line
 					// @ts-ignore
 					entry.target.timeline.play(0);
@@ -78,11 +55,16 @@ export default class inviewMixin extends Vue {
 		if (targets.length > 0) {
 			// a loop: create the individual target timelines
 			targets.forEach((target) => {
-				// eslint-disable-next-line
-				new SplitText(target, {
-					type: "words",
-				});
+				// Wrap all words in <span>'s. if word contains &shy; it will split to multiple spans
+				target.innerHTML = target.innerHTML.replace(
+					/\w+/g,
+					"<span>$&</span>"
+				);
 
+				// Remove &shy;'s
+				target.innerHTML = target.innerHTML.replace(/\u00AD/g, "");
+
+				// eslint-disable-next-line no-new
 				const mySplitText2Chars = new SplitText(target, {
 					type: "chars",
 				});
@@ -103,7 +85,7 @@ export default class inviewMixin extends Vue {
 				);
 
 				target.timeline = action;
-				target.classList.add("is-activated");
+				delete target.dataset.splitText;
 			});
 
 			Array.prototype.forEach.call(targets, (el) => {

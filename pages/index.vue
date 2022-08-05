@@ -1,6 +1,7 @@
 <template>
 	<div class="container l-p-xxs">
 		<nuxt-link to="/page-two/">page-two</nuxt-link>
+
 		<h1 data-split-text>Tilte on page two</h1>
 	</div>
 </template>
