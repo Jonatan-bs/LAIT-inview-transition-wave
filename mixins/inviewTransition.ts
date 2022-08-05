@@ -55,13 +55,13 @@ export default class inviewMixin extends Vue {
 		if (targets.length > 0) {
 			// a loop: create the individual target timelines
 			targets.forEach((target) => {
-				// Wrap all words in <span>'s. if word contains &shy; it will split to multiple spans
+				// Wrap all words in <span>'s. if word contains &shy; it will split to multiple spans (Only relevant if splitting on chars)
 				target.innerHTML = target.innerHTML.replace(
 					/\w+/g,
 					"<span>$&</span>"
 				);
 
-				// Remove &shy;'s
+				// Remove &shy;'s (Only relevant if splitting on chars)
 				target.innerHTML = target.innerHTML.replace(/\u00AD/g, "");
 
 				const mySplitText2Chars = new SplitText(target, {
