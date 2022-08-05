@@ -15,7 +15,6 @@ export default class inviewMixin extends Vue {
 			// in order to check if they're inside the viewport
 			setTimeout(() => {
 				this.ioGlobal();
-				// this.parralaxAnimations();
 			}, 50);
 		});
 	}
@@ -35,6 +34,7 @@ export default class inviewMixin extends Vue {
 			entries.forEach((entry: IntersectionObserverEntry) => {
 				if (entry.isIntersecting) {
 					entry.target.classList.add("split-text--is-activated");
+
 					// eslint-disable-next-line
 					// @ts-ignore
 					entry.target.timeline.play(0);
@@ -64,7 +64,6 @@ export default class inviewMixin extends Vue {
 				// Remove &shy;'s
 				target.innerHTML = target.innerHTML.replace(/\u00AD/g, "");
 
-				// eslint-disable-next-line no-new
 				const mySplitText2Chars = new SplitText(target, {
 					type: "chars",
 				});
