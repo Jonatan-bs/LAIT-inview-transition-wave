@@ -6,10 +6,9 @@ const callbackFunc = (
 	entries: IntersectionObserverEntry[],
 	io: IntersectionObserver
 ) => {
-	entries.forEach((entry: IntersectionObserverEntry) => {
+	(entries as IIOAnimationEntry[]).forEach((entry) => {
 		if (entry.isIntersecting) {
-			// eslint-disable-next-line
-			// @ts-ignore
+			if (!entry?.target?.timeline) return;
 			entry.target.timeline.play(0);
 			io.unobserve(entry.target);
 		}
@@ -21,7 +20,7 @@ const options = {
 };
 
 Vue.directive("char-animation", {
-	bind: (el) => {
+	bind: (el: HTMLElement) => {
 		// Wrap all words in <span>'s. if word contains &shy; it will split to multiple spans (Only relevant if splitting on chars)
 		el.innerHTML = el.innerHTML.replace(/\w+/g, "<span>$&</span>");
 
@@ -38,7 +37,7 @@ Vue.directive("char-animation", {
 			type: "chars",
 		});
 
-		const action = gsap.timeline({ paused: true }).from(
+		const timeline = gsap.timeline({ paused: true }).from(
 			mySplitText2Chars.chars,
 			{
 				duration: 0.3,
@@ -53,13 +52,17 @@ Vue.directive("char-animation", {
 			0
 		);
 
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-ignore
-		el.timeline = action;
-		// delete el.dataset.splitText;
+		(el as IAnimationElement).timeline = timeline;
 
 		// Observe element
 		const observer = new IntersectionObserver(callbackFunc, options);
 		observer.observe(el);
 	},
 });
+
+declare interface IAnimationElement extends HTMLElement {
+	timeline: gsap.core.Timeline;
+}
+declare interface IIOAnimationEntry extends IntersectionObserverEntry {
+	target: IAnimationElement;
+}
