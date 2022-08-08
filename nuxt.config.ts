@@ -68,7 +68,7 @@ export default {
 	/*
 	 ** custom plugins options
 	 */
-	plugins: [],
+	plugins: ["~/plugins/charAnimation.client.ts"],
 
 	/*
 	 ** Auto import of components
