@@ -1,6 +1,10 @@
 # Text-wave-animation
 
 Add wave animation to titles, when scrolled in to view
+
+Easy to configure mixin for other title animations
+
++ works with '&shy';
 <br>
 <br>
 <br>
