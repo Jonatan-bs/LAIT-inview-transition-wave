@@ -22,7 +22,7 @@ plugins\charAnimation.client.ts
 Add plugin to nuxt.config.ts
 
 ```js
-    plugins: ["~/plugins/charAnimation.client.ts"],
+plugins: ["~/plugins/charAnimation.client.ts"],
 ```
 
 <br>
