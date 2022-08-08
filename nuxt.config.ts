@@ -84,7 +84,6 @@ export default {
 		"nuxt-purgecss",
 		"@nuxt/typescript-build",
 		"nuxt-font-loader",
-		"nuxt-gsap-module",
 	],
 	modules: [
 		"@nuxtjs/svg",

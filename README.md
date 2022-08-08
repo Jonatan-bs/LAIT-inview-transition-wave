@@ -9,33 +9,11 @@ Add wave animation to titles, when scrolled in to view
 
 <br>
 
-> assets\styles\animations\splittext.scss
-
-> mixins\inviewTransition.ts
-
-> utils\splitText\SplitText.js
-
-> utils\splitText\utils\strings.js
+> plugins\charAnimation.client.ts
 
 ---
 
 <br>
-
-## Add to nuxt.config.ts
-
-<br>
-
-```js
-
-    buildModules: ["nuxt-gsap-module"],
-    gsap: {
-    	extraPlugins: {
-    		scrollTrigger: true,
-    	},
-    },
-```
-
----
 
 <br>
 
@@ -43,20 +21,16 @@ Add wave animation to titles, when scrolled in to view
 
 <br>
 
-Add mixin to page or component
+Add plugin to nuxt.config.ts
 
 ```js
-    import inviewMixin from "~/mixins/inviewTransition";
-
-    @Component({
-        mixins: [inviewMixin],
-    })
+    plugins: ["~/plugins/charAnimation.client.ts"],
 ```
 
 <br>
 
-Add data-split-text to element to add wave animation
+Add v-char-animation to element to add wave animation
 
 ```html
-<h1 data-split-text>Tilte on page two</h1>
+<h1 v-char-animation>Tilte on page two</h1>
 ```
